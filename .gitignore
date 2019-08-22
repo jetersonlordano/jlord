@@ -1,0 +1,17 @@
+# Ignora diretórios
+_cacheDir/
+_tables/
+uploads/authors/*
+uploads/branding/*
+uploads/covers/*
+uploads/posts/*
+
+### VisualStudioCode ###
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Ignore all local history of files
+.history

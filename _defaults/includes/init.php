@@ -64,8 +64,7 @@ if (!empty($SEO[$FIX . 'analytics'])) {
 // Informações da página
 echo '<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="robots" content="index, follow"/>';
 
-echo '<title>' . $SEO[$FIX . 'title'] . '</title><meta name="description" content="' . $SEO[$FIX . 'description'] . '"/><link rel="base" href="' . HOME . '"/><link rel="home" href="' . HOME . '"/><base id="urlHome" href="' . HOME . '"/><link rel="author" href="' . DEVGOOGLEPLUS . '/posts"/><meta property="fb:app_id" content="' . FACEBOOKAPPID . '"/><meta property="twitter:creator" content="' . DEVTWITTERCREATOR . '"/>';
-
+echo '<title>' . $SEO[$FIX . 'title'] . '</title><meta name="description" content="' . $SEO[$FIX . 'description'] . '"/><link rel="base" href="' . HOME . '"/><link rel="home" href="' . HOME . '"/><base id="urlHome" href="' . HOME . '"/><meta property="twitter:creator" content="' . DEVTWITTERCREATOR . '"/>';
 
 // Metatags de SEO
 if (SEO) {
@@ -76,8 +75,6 @@ if (SEO) {
     echo '<link rel="alternate" type="application/rss+xml" href="' . HOME . '/rss.xml"/>';
     echo '<link rel="sitemap" type="application/xml" href="' . HOME . '/sitemap.xml"/>';
 
-    echo '<meta property="article:author" content="' . DEVFACEBOOKAUTHOR . '"/>';
-    echo '<meta property="fb:admins" content="' . DEVFACEBOOKADMINS . '"/>';
     echo '<meta itemprop="name" content="' . $SEO[$FIX . 'title'] . '"/>';
     echo '<meta itemprop="description" content="' . $SEO[$FIX . 'description'] . '"/>';
     echo '<meta itemprop="image" content="' . HOME . '/' . $SEO[$FIX . 'cover'] . '"/>';
@@ -96,8 +93,6 @@ if (SEO) {
     echo '<meta property="og:url" content="' . HOME . '/' . $SEO[$FIX . 'link'] . '"/>';
     echo '<meta property="ia:markup_url" content="' . HOME . '/' . $SEO[$FIX . 'link'] . '"/>';
     echo '<meta property="fb:pages" content="' . FACEBOOKPAGEID . '"/>';
-   // echo '<meta property="article:publisher" content="' . FACEBOOKPUBLISHER . '"/>';
-    echo '<link rel="publisher" href="' . GOOGLEPLUSPUBLISHER . '"/>';
 
     // Twitter
     echo '<meta property="twitter:card" content="summary_large_image"/>';
@@ -107,7 +102,6 @@ if (SEO) {
     echo '<meta property="twitter:image:width" content="' . $SEO[$FIX . 'coverw'] . '"/>';
     echo '<meta property="twitter:image:height" content="' . $SEO[$FIX . 'coverh'] . '"/>';
     echo '<meta property="twitter:url" content="' . HOME . '/' . $SEO[$FIX . 'link'] . '"/>';
-    //echo '<meta property="twitter:site" content="' . TWITTERSITE . '"/>';
     echo '<meta property="twitter:domain" content="' . HOME . '"/>';
 
     // ld-json

@@ -1,9 +1,11 @@
 <?php
-/**
+
+/**
  * Configurações do site 
  * @author Jeterson Lordano <jetersonlordano@gmail.com> 
  */
-// Configurações do servidor 
+
+// Configurações do servidor 
 require 'Config.inc.php';
 
 // Informações do site
@@ -26,6 +28,7 @@ define('USERSONLINE', true);
 define('ANALYTICS', true);
 define('SEARCH', true);
 define('SEO', true);
+define('CACHE', false);
 
 // Contatos
 define('PHONE', '(99) 99999-9999');

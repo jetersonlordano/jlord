@@ -29,6 +29,7 @@ define('ISEDITOR', strpos($_SERVER['REQUEST_URI'], 'admin/editor.php') !== false
 // Dados do desenvolvedor
 define('DEVNAME', 'Jeterson Lordano');
 define('DEVSITE', 'https://www.jetersonlordano.com.br');
+define('DEVTWITTERCREATOR', '@jetersonlordano');
 
 // Banco de dados
 define("DBHOST", 'localhost');
