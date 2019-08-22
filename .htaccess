@@ -1,0 +1,15 @@
+RewriteEngine On
+
+#Proíbe acesso a pastas no servidor
+Options -Indexes
+
+#Protege arquivo htaccess
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?page=$1

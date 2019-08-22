@@ -1,0 +1,184 @@
+<div class="col col-8">
+    <div class="card bg-white radius box-shadow">
+        <div class="card-body">
+            <div class="card-title">PÁGINA</div>
+            <div class="interrupter">
+                <input hidden id="pg_on" form="pgForm" type="checkbox" name="published" #pg_published#>
+                <label for="pg_on" title="Publicar post">
+                    <span class="chave"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <form class="form-flex radius" id="pgForm" name="pgForm" action="javascript:void(0);" method="post">
+                <input type="hidden" id="#pg_id#" name="id" value="#pg_id#">
+
+                <!-- Name -->
+                <div class="input-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" title="Nome da página" required placeholder="Nome da página"
+                        maxlength="45" value="#pg_name#">
+                    <div class="input-feedback">Preencha este campo</div>
+                </div>
+
+                <!-- title -->
+                <div class="input-group">
+                    <label for="title">Título</label>
+                    <input type="text" id="title" name="title" title="Título da página" required placeholder="Título da página"
+                        maxlength="80" value="#pg_title#">
+                    <div class="input-feedback">Preencha este campo</div>
+                </div>
+
+                <!-- description -->
+                <div class="input-group">
+                    <label for="description">Descrição</label>
+                    <textarea placeholder="Descrição da página" id="description" name="description" title="Descrição da página"
+                        rows="2" maxlength="160">#pg_description#</textarea>
+                    <div class="input-feedback">Preencha este campo</div>
+                </div>
+
+                <!-- Analytics -->
+                <!-- <div class="input-group">
+                            <label for="title">Código Google Analytics</label>
+                            <input type="text" id="analytics" name="analytics" title="Código de aconpanhamento" placeholder="Código Google Analytics" maxlength="30" value="#pg_analytics#">
+                            <div class="input-feedback">Preencha este campo</div>
+                        </div> -->
+                        
+                <!-- File -->
+                <div class="input-group input-width-50">
+                    <label for="file">Arquivo</label>
+                    <select id="file" form="pgForm" name="file" title="Arquivo">
+                        <option value="">Nenhum</option>
+                    </select>
+                </div>
+
+                <!-- Theme -->
+                <div class="input-group input-width-50">
+                    <label for="theme">Tema</label>
+                    <select id="theme" form="pgForm" name="theme" title="Tema">
+                        <option value="#pg_theme#">#pg_theme#</option>
+                    </select>
+                </div>
+
+                <!-- Section -->
+                <div class="input-group input-width-50">
+                    <label for="section">Seção</label>
+                    <select id="section" form="pgForm" name="section" title="Página seção">
+                        <option value="">Nenhum</option>
+                    </select>
+                </div>
+
+                <!-- Single -->
+                <div class="input-group input-width-50">
+                    <label for="single">Página única</label>
+                    <select id="single" form="pgForm" name="single" title="Página única">
+                        <option value="">Nenhum</option>
+                    </select>
+                </div>
+
+                <!-- Type -->
+                <!-- <div class="input-group input-width-50">
+                    <label for="type">Tipo</label>
+                    <select id="type" form="pgForm" name="type" title="Tipo da página">
+                        <option value="WebSite">WebSite</option>
+                    </select>
+                </div> -->
+
+                <!-- Content -->
+                <div class="input-group">
+                    <label for="content">Conteúdo</label>
+                    <textarea placeholder="Conteúdo HTML" id="content" name="content" title="Conteúdo HTML" rows="15">#pg_content#</textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-main btn-form">
+                    <i class="fa fa-save"></i>
+                    <span id="loaderPgs" class="loaderIco">
+                        <i class="fa fa-spinner fa-pulse"></i>
+                    </span>
+                    Salvar
+                </button>
+
+
+            </form>
+        </div>
+
+    </div>
+</div>
+<div class="col col-4">
+    <div class="card bg-white radius box-shadow">
+        <div class="card-body">
+            <div class="card-title">INFORMAÇÔES</div>
+        </div>
+
+        <!-- Imagem de capa -->
+        <!-- <div class="card-body">
+                    <label class="pointer block" for="pgCoverInput" title="Alterar imagem de capa">
+                        <img id="pgCoverImg" class="img radius" src="#pg_cover#" alt="#coverName#" data-name="#coverName#" data-path="#pg_path#">
+                    </label>
+                </div> -->
+
+        <!-- Informações adicionais -->
+        <div class="card-body">
+            <div class="form-flex radius">
+
+                <!-- Input Cover -->
+                <!-- <div class="input-group">
+                            <label for="postCoverInput">Capa</label>
+                            <input type="file" id="postCoverInput" name="cover" title="Capa do post" accept="image/jpg, image/jpeg, image/png">
+                        </div> -->
+
+                <div class="input-group">
+                    <div>Adicionar ao menu</div>
+                    <div class="interrupter">
+                        <input hidden id="pg_addnav" form="pgForm" type="checkbox" name="addnav" #pg_published#>
+                        <label for="pg_addnav" title="Publicar post">
+                            <span class="chave"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div>Cabeçalho padrão</div>
+                    <div class="interrupter">
+                        <input hidden id="pg_header" form="pgForm" type="checkbox" name="header" #pg_published#>
+                        <label for="pg_header" title="Publicar post">
+                            <span class="chave"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div>Rodapé padrão</div>
+                    <div class="interrupter">
+                        <input hidden id="pg_footer" form="pgForm" type="checkbox" name="footer" #pg_published#>
+                        <label for="pg_footer" title="Publicar post">
+                            <span class="chave"></span>
+                        </label>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-main btn-form" form="pgForm">
+                    <i class="fa fa-save"></i>
+                    <span id="loaderPgs" class="loaderIco">
+                        <i class="fa fa-spinner fa-pulse"></i>
+                    </span>
+                    Salvar
+                </button>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script async>
+    var postUpdateObj = {
+        file: 'async/pgs/update.php',
+        loader: 'loaderPgs'
+    };
+    submitForm(postUpdateObj, 'pgForm');
+</script>

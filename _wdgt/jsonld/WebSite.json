@@ -1,0 +1,15 @@
+{
+    "@context": "http://schema.org/",
+    "@type": "WebSite",
+    "url": "#url#",
+    "@id": "#pageid#",
+    "name": "#sitename#",
+    "description": "#description#",
+    "image": {
+        "@type": "ImageObject",
+        "url": "#cover#",
+        "width": "#coverw#",
+        "height": "#coverh#"
+    },
+    "sameAs": ["#sameAs#"]
+}

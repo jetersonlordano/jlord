@@ -1,0 +1,32 @@
+{
+    "@context": "http://schema.org/",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "#pageid#"
+    },
+    "headline": "#headline#",
+    "image": {
+        "@type": "ImageObject",
+        "url": "#cover#",
+        "width": "#coverw#",
+        "height": "#coverh#"
+    },
+    "datePublished": "#datePublished#",
+    "dateModified": "#dateModified#",
+    "description": "#description#",
+    "author": {
+        "@type": "Person",
+        "name": "#author#"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "#author#",
+        "url": "#url#",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "#logo#"
+        },
+        "sameAs": ["#sameAs#"]
+    }
+}

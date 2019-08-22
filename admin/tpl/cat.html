@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col">
+        <div class="card bg-white radius box-shadow">
+            <div class="card-body">
+                <div class="card-title">Categoria</div>
+            </div>
+            <div class="card-body">
+
+                <form class="form-flex radius" id="catForm" name="catForm" action="javascript:void(0);" method="post">
+
+                    <input type="hidden" id="cat#cat_id#" name="id" value="#cat_id#">
+                    <input type="hidden" name="section" value="#cat_section#">
+
+                    <!-- Title -->
+                    <div class="input-group">
+                        <label for="name">Título</label>
+                        <input type="text" id="name" name="name" title="Título da categoria" required placeholder="Título da categoria"
+                               maxlength="45" autocomplete="off" value="#cat_title#">
+                        <div class="input-feedback">Preencha este campo</div>
+                    </div>
+
+                    <!-- description -->
+                    <div class="input-group">
+                        <label for="description">Descrição</label>
+                        <textarea placeholder="Descrição do site" id="description" name="description" title="Descrição do post" rows="2" required maxlength="255">#cat_description#</textarea>
+                        <div class="input-feedback">Preencha este campo</div>
+                    </div>
+
+                    <!-- section -->
+                    <div class="input-group">
+                        <label for="section">Section</label>
+                        <input type="text" id="section" disabled value="#section#">
+                        <div class="input-feedback">Preencha este campo</div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-main btn-form">
+                        <i class="fa fa-save"></i>
+                        <span id="loaderCat" class="loaderIco">
+                            <i class="fa fa-spinner fa-pulse"></i>
+                        </span>
+                        Salvar
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script async>
+    var newObjCat = {
+        file: 'async/cats/update.php',
+        loader: 'loaderCat'
+    };
+    submitForm(newObjCat, 'catForm');
+</script>
