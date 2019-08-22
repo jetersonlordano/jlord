@@ -1,10 +1,7 @@
 # Ignora diretórios
 _cacheDir/
 _tables/
-uploads/authors/*
-uploads/branding/*
-uploads/covers/*
-uploads/posts/*
+uploads/posts/*/
 
 ### VisualStudioCode ###
 .vscode/
