@@ -20,21 +20,21 @@ define('REQ', PATHTHEMES . DS . THEME . DS);
 define('TPL', REQ . 'tpl' . DS);
 
 // Recursos do sistema
-define('POSTS', false);
-define('PAGES', false);
-define('USERSONLINE', false);
-define('ANALYTICS', false);
-define('SEARCH', false);
-define('SEO', false);
+define('POSTS', true);
+define('PAGES', true);
+define('USERSONLINE', true);
+define('ANALYTICS', true);
+define('SEARCH', true);
+define('SEO', true);
 
 // Contatos
-define('PHONE', '');
-define('WHATSAPP', '');
-define('EMAIL', '');
+define('PHONE', '(99) 99999-9999');
+define('WHATSAPP', '(99) 99999-9999');
+define('EMAIL', 'jetersonlordano@gmail.com');
 
 // Endereço
-define('CEP', '');
-define('ADDRESS', '');
+define('CEP', '85415-000');
+define('ADDRESS', 'Cafelândia PR');
 define('COORDINATES', '');
 
 // APIS
