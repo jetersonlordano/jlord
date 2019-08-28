@@ -9,7 +9,7 @@ if (!$POST) {die;}
 $fields = ['base', 'username', 'login', 'psw', 'host', 'dbname', 'dbuser'];
 foreach ($fields as $fds) {
     if (!isset($POST[$fds]) || empty($POST[$fds])) {
-        die('Preencha todos os campos obrigatórios');
+        die('Preencha todos os campos obrigatórios *');
     }
 }
 
@@ -164,7 +164,7 @@ function configs()
     global $DBPASS;
 
     $conf = [
-        'base' => $urlBase,
+        'base' => str_replace(['https://', 'http://'], '', $urlBase),
         'dbhost' => $DBHOST,
         'dbname' => $DBNAME,
         'dbuser' => $DBUSER,
