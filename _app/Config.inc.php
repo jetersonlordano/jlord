@@ -19,7 +19,7 @@ session_start();
 define('DS', DIRECTORY_SEPARATOR);
 define('CMSNAME', 'JLord');
 define('TRANSFERPROTOCOL', isset($_SERVER['HTTPS']) ? 'https://' : 'http://');
-define('HOME', TRANSFERPROTOCOL . 'www.localhost/jlord/install');
+define('HOME', TRANSFERPROTOCOL . 'localhost/jlord');
 define('ADM', HOME . '/admin');
 define('SESSIONUSERID', md5('user' . $_SERVER['HTTP_HOST'] . $_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT']));
 

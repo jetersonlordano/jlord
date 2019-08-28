@@ -1,14 +1,5 @@
 <?php
 
-require_once '_app/Client.inc.php';
-
-$LINK = new Link();
-$PAGES = new Pages($LINK);
-$VIEWS = new Views($LINK);
-
-foreach ($PAGES->files as $pgfile) {
-    if ($pgfile) {
-        require_once $pgfile;
-    }
-}
-ob_end_flush();
+$URL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+header('Location: ' . $URL . '/install');
+die;
