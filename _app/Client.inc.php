@@ -11,7 +11,7 @@ require 'Config.inc.php';
 // Informações do site
 define('TITLE', 'JLord');
 define('DESCRIPTION', 'Mais um site criado com JLord');
-define('THEME', 'jetersonlordano');
+define('THEME', 'default');
 
 // Timezone
 date_default_timezone_set('America/Sao_Paulo');
