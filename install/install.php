@@ -5,12 +5,6 @@ define('DS', DIRECTORY_SEPARATOR);
 $POST = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 if (!$POST) {die;}
 
-
-sleep(5);
-$callback = json_encode(['fn' => 'reload', 'msg' => 'JLord Instalado com sucesso!']);
-            echo $callback;
-die;
-
 // Campos obrigatórios
 $fields = ['base', 'username', 'login', 'psw', 'host', 'dbname', 'dbuser'];
 foreach ($fields as $fds) {
