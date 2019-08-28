@@ -15,15 +15,17 @@ $FIX = TBUSERS[1];
 if ($USERLOGGEDIN[$FIX . 'id'] != $POST['id']) {echo ERROR();die;}
 
 
-$terms = "{$FIX}nickname = :nickname, {$FIX}name = :name, {$FIX}email = :email, {$FIX}phone = :phone, {$FIX}rg = :rg, {$FIX}cpf = :cpf, {$FIX}dateofbirth = :dateofbirth, {$FIX}gender = :gender, {$FIX}address = :address WHERE {$FIX}id = :id LIMIT 1";
+$terms = "{$FIX}nickname = :nickname, {$FIX}name = :name, {$FIX}main = :main, {$FIX}email = :email, {$FIX}phone = :phone, {$FIX}rg = :rg, {$FIX}cpf = :cpf, {$FIX}description = :description, {$FIX}dateofbirth = :dateofbirth, {$FIX}gender = :gender, {$FIX}address = :address WHERE {$FIX}id = :id LIMIT 1";
 
 $values = [
     'nickname' => trim($POST['nickname']),
     'name' => trim($POST['name']),
+    'main' => isset($POST['main']) ? 1 : 0,
     'email' => trim($POST['email']),
     'phone' => $POST['phone'],
     'rg' => trim($POST['rg']),
     'cpf' => trim($POST['cpf']),
+    'description' => strip_tags(trim($POST['description'])),
     'dateofbirth' => $POST['dateofbirth'],
     'gender' => $POST['gender'],
     'address' => trim($POST['address']),
@@ -33,6 +35,8 @@ $values = [
 
 $_SESSION['admin' . SESSIONUSERID][$FIX . 'nickname'] = $values['nickname'];
 $_SESSION['admin' . SESSIONUSERID][$FIX . 'name'] = $values['name'];
+$_SESSION['admin' . SESSIONUSERID][$FIX . 'main'] = $values['main'];
+$_SESSION['admin' . SESSIONUSERID][$FIX . 'description'] = $values['description'];
 $_SESSION['admin' . SESSIONUSERID][$FIX . 'email'] = $values['email'];
 $_SESSION['admin' . SESSIONUSERID][$FIX . 'phone'] = $values['phone'];
 $_SESSION['admin' . SESSIONUSERID][$FIX . 'rg'] = $values['rg'];

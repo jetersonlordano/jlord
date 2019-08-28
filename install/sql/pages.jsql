@@ -1,0 +1,23 @@
+CREATE TABLE `jl_pages` (
+  `pg_id` int(11) NOT NULL AUTO_INCREMENT,
+  `pg_name` varchar(45) NOT NULL,
+  `pg_title` varchar(80) NOT NULL,
+  `pg_description` varchar(160) DEFAULT NULL,
+  `pg_file` varchar(45) DEFAULT NULL,
+  `pg_link` varchar(45) NOT NULL,
+  `pg_theme` varchar(20) NOT NULL DEFAULT 'default',
+  `pg_section` varchar(45) DEFAULT NULL,
+  `pg_single` varchar(45) DEFAULT NULL,
+  `pg_type` varchar(45) NOT NULL,
+  `pg_cover` varchar(45) DEFAULT NULL,
+  `pg_published` tinyint(1) DEFAULT 0,
+  `pg_addnav` tinyint(1) DEFAULT 0,
+  `pg_ordernav` tinyint(2) DEFAULT 0,
+  `pg_header` varchar(45) DEFAULT NULL,
+  `pg_footer` varchar(45) DEFAULT NULL,
+  `pg_content` text DEFAULT NULL,
+  `pg_analytics` varchar(30) DEFAULT NULL,
+  `pg_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `pg_lastupdate` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`pg_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

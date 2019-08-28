@@ -30,9 +30,9 @@ class Thumb
         $target = self::getImage($src);
 
         for ($b = 0; $b < $back; $b++) {
-            $backDir .= '..' . DS;
+            $backDir .= '../';
         }
-
+       
         // Verificar ou cria os diretório
         $targetDir = self::checkDir($backDir . CACHEDIR, $path);
 

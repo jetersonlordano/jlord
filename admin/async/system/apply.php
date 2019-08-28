@@ -26,11 +26,9 @@ $conn->exec();
 $networks = $conn->fetchAll();
 
 // Consulta páginas para gerar menu de nevegação automático
-$FIXP = TBPAGES[1];
-$fields = "{$FIXP}name, {$FIXP}title, {$FIXP}description, {$FIXP}link";
-$terms = "WHERE ({$FIXP}theme = :theme AND {$FIXP}published = :published AND {$FIXP}addnav = :addnav) ORDER BY {$FIXP}ordernav ASC";
-$values = ['theme' => THEME, 'published' => 1, 'addnav' => 1];
-$conn->select($fields, TBPAGES[0], $terms, $values);
+$FIXP = TBNAV[1];
+$terms = "ORDER BY {$FIXP}order ASC";
+$conn->select('*', TBNAV[0], $terms);
 $conn->exec();
 $nav = $conn->fetchAll();
 
@@ -89,14 +87,12 @@ $settings .= "]);\n";
 
 $settings .= "\n// Menu principal\ndefine('NAVIGATION', [\n";
 
-if ($nav) {foreach ($nav as $key => $vlr) {
-    $link = $vlr[$FIXP . 'link'];
-    $desc = $vlr[$FIXP . 'description'];
-    $title = $vlr[$FIXP . 'title'];
-    $settings .= "    '{$link}' => ['{$title}', '{$desc}'],\n";
-}}
+if ($nav) {
+    foreach ($nav as $key => $vlr) {
+        $settings .= "    '{$vlr[$FIXP . 'name']}' => ['{$vlr[$FIXP . 'menu']}', '{$vlr[$FIXP . 'title']}', '{$vlr[$FIXP . 'url']}', {$vlr[$FIXP . 'blank']}],\n";
+    }
+}
 $settings .= ']);';
-
 
 // Cria o arquivo Client.inc.php
 file_put_contents($pathapp . DS . 'Client.inc.php', $settings);

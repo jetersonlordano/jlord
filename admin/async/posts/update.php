@@ -6,6 +6,7 @@ if (!PERMISSION(8)) {die;}
 $POST = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 if (!$POST) {ERROR();die;}
 
+
 // Limpa os arquivo não usados
 $dirPost = '../../../' . PATHPOSTS;
 $dirPost = str_replace('/', DS, $dirPost);

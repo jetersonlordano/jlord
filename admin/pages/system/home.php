@@ -99,7 +99,7 @@ setConfig('TIMEZONE', 'Timezone', getValue('TIMEZONE') ?? 'America/Sao_Paulo', n
 $defineComment = 'Configurações de URLs e Diretórios do projetos';
 setConfig('ADD', $defineComment, "HOME . '/' . PATHTHEMES . '/' . THEME", 'concatenated');
 setConfig('REQ', $defineComment, "PATHTHEMES . DS . THEME . DS", 'concatenated');
-setConfig('TPL', $defineComment, "REQ . 'tpl' . DS", 'concatenated');
+setConfig('TPL', $defineComment, "REQ . 'html' . DS", 'concatenated');
 
 // Save
 echo Form::Save('Salvar', 'systemLoader', 'system', true);
@@ -109,12 +109,12 @@ echo '</form></div></div></div>';
 /**
  * Recursos do sistema
  */
-setConfig('POSTS', 'Recursos do sistema', 'false', 'boolean');
-setConfig('PAGES', 'Recursos do sistema', 'false', 'boolean');
-setConfig('USERSONLINE', 'Recursos do sistema', 'false', 'boolean');
-setConfig('ANALYTICS', 'Recursos do sistema', 'false', 'boolean');
-setConfig('SEARCH', 'Recursos do sistema', 'false', 'boolean');
-setConfig('SEO', 'Recursos do sistema', 'false', 'boolean');
+setConfig('POSTS', 'Recursos do sistema', 'true', 'boolean');
+setConfig('PAGES', 'Recursos do sistema', 'true', 'boolean');
+setConfig('USERSONLINE', 'Recursos do sistema', 'true', 'boolean');
+setConfig('ANALYTICS', 'Recursos do sistema', 'true', 'boolean');
+setConfig('SEARCH', 'Recursos do sistema', 'true', 'boolean');
+setConfig('SEO', 'Recursos do sistema', 'true', 'boolean');
 
 if ($SUPERUSER):
 
@@ -209,28 +209,54 @@ echo '</form></div></div></div>';
 
 echo '<div class="col"><div class="card radius bg-white box-shadow"><div class="card-body"><div class="card-title">REDES SOCIAIS</div></div><div class="card-body bg-light"><form class="form-flex radius" id="socialnetworks" name="socialnetworks" action="javascript:void(0);" method="post">';
 
-$FIXSN = TBNET[1];
-$conn = new Conn();
-$conn->select('*', TBNET[0]);
-$conn->exec();
-$SOCIALNETWORKS = $conn->fetchAll();
-
 $NETSICONS = [
-    'facebook' => 'fa fa-facebook',
-    'twitter' => 'fa fa-twitter',
-    'instagram' => 'fa fa-instagram',
-    'linkdin' => 'fa fa-linkedin',
-    'youtube' => 'fa fa-youtube',
-    'github' => 'fa fa-github',
+    'facebook' => ['https://facebook.com', 'fa fa-facebook'],
+    'twitter' => ['https://twitter.com', 'fa fa-twitter'],
+    'instagram' => ['https://instagram.com', 'fa fa-instagram'],
+    'linkdin' => ['https://linkedin.com/in', 'fa fa-linkedin'],
+    'youtube' => ['https://youtube.com', 'fa fa-youtube'],
+    'github' => ['https://github.com', 'fa fa-github'],
 ];
 
-if ($SOCIALNETWORKS) {foreach ($SOCIALNETWORKS as $SN) {
+function selectSociais()
+{
+    $FIXSN = TBNET[1];
+    $conn = new Conn();
+    $conn->select('*', TBNET[0]);
+    $conn->exec();
+    return $conn->fetchAll();
+}
+
+$SOCIALNETWORKS = selectSociais();
+
+if (!$SOCIALNETWORKS) {
+
+    foreach ($NETSICONS as $keySN => $valueSN) {
+        insertSocial([
+            TBNET[1] . 'name' => $keySN,
+            TBNET[1] . 'base' => $valueSN[0],
+            TBNET[1] . 'icon' => $valueSN[1],
+        ]);
+    }
+}
+
+function insertSocial(array $socialValues)
+{
+    $conn = new Conn();
+    $conn->insert(TBNET[0], $socialValues);
+    return $conn->exec();
+}
+
+$SOCIALNETWORKS = selectSociais();
+
+$FIXSN = TBNET[1];
+if ($SOCIALNETWORKS) {foreach ($SOCIALNETWORKS as $keys => $SN) {
+    
     $nameSN = $SN[$FIXSN . 'name'];
     $titleSN = ucfirst($nameSN);
     $reqSN = $nameSN == 'facebook' ? true : false;
-    echo Form::Input('text', $SN[$FIXSN . 'name'], $titleSN, $titleSN, 'input-width-50', $SN[$FIXSN . 'perfil'], $reqSN, 80, null, $NETSICONS[$nameSN]);
+    echo Form::Input('text', $SN[$FIXSN . 'name'], $titleSN, $titleSN, 'input-width-50', $SN[$FIXSN . 'perfil'], $reqSN, 80, null, $NETSICONS[$nameSN][1]);
 }}
-
 // Save
 echo Form::Save('Salvar', 'socialnetworksLoader', 'socialnetworks', true);
 
@@ -253,4 +279,5 @@ echo '</div>';
     function applyConfigs(){ajax({file: 'async/system/apply.php', loader: 'loader'});}
     jevt(applySettings, 'click', applyConfigs, !0);
      })();
+
 </script>

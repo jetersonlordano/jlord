@@ -1,0 +1,8 @@
+CREATE TABLE `jl_networks` (
+  `net_id` int(11) NOT NULL AUTO_INCREMENT,
+  `net_name` varchar(45) NOT NULL,
+  `net_base` varchar(150) NOT NULL,
+  `net_perfil` varchar(60) DEFAULT NULL,
+  `net_icon` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`net_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8

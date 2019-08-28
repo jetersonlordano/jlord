@@ -33,6 +33,9 @@ echo Form::Input('text', 'name', 'Nome', 'Seu nome completo', null, $USERACTIVE[
 // Nivel de acesso
 echo Form::Input('text', 'accesslevel', 'Nível de acesso', 'Nível de acesso', null, ACCESSLEVEL[$USERACTIVE[$FIX . 'accesslevel']], false, 45, 'readonly disabled');
 
+// Telefone
+echo Form::Input('tel', 'phone', 'Telefone', 'Telefone', null, $USERACTIVE[$FIX . 'phone'], false, 45, 'form="perfilEdit"');
+
 ?>
 
                 </form>
@@ -44,6 +47,14 @@ echo Form::Input('text', 'accesslevel', 'Nível de acesso', 'Nível de acesso', 
         <div class="card bg-white radius box-shadow">
             <div class="card-body justify-content-between align-items-center">
                 <div class="card-title">INFORMAÇÕES</div>
+<?php
+
+// Post publicado
+echo Form::Interrupter('main', 'Usuário principal', $USERACTIVE[$FIX . 'main'], 'perfilEdit');
+
+?>
+
+
             </div>
 
             <div class="card-body bg-light radius">
@@ -51,16 +62,15 @@ echo Form::Input('text', 'accesslevel', 'Nível de acesso', 'Nível de acesso', 
 <?php
 
 // Email
-echo Form::Input('email', 'email', 'E-mail', 'Seu e-mail', 'input-width-50', $USERACTIVE[$FIX . 'email'], true, 60, 'form="perfilEdit"');
+echo Form::Input('email', 'email', 'E-mail', 'Seu e-mail', null, $USERACTIVE[$FIX . 'email'], true, 60, 'form="perfilEdit"');
 
-// Telefone
-echo Form::Input('tel', 'phone', 'Telefone', 'Telefone', 'input-width-50', $USERACTIVE[$FIX . 'phone'], false, 45, 'form="perfilEdit"');
+echo Form::Textarea('description', 'Sobre', 'Sobre o usuário', null, $USERACTIVE[$FIX . 'description'], false, 255, 'form="perfilEdit" row="2"');
 
 // RG
 echo Form::Input('text', 'rg', 'RG', 'Seu RG', 'input-width-50', $USERACTIVE[$FIX . 'rg'], false, 15, 'form="perfilEdit"');
 
 // CPF
-echo Form::Input('text', 'cpf', 'CPF', 'Seu CPF', 'input-width-50', $USERACTIVE[$FIX . 'cpf'], true, 15, 'form="perfilEdit" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"');
+echo Form::Input('text', 'cpf', 'CPF', 'Seu CPF', 'input-width-50', $USERACTIVE[$FIX . 'cpf'], false, 15, 'form="perfilEdit" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"');
 
 // Data de nascimento
 echo Form::Input('date', 'dateofbirth', 'Nascimento', 'Data de nascimento', 'input-width-50', $USERACTIVE[$FIX . 'dateofbirth'], true, 10, 'form="perfilEdit"');

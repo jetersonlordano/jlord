@@ -15,15 +15,18 @@ class FNC
      */
     public static function view(array $values, string $file = null, string $strTpl = null)
     {
+             
         // Template
         $file = file_exists($file) ? file_get_contents($file) : null;
         $tpl = $file ?? $strTpl;
-
+      
         // Transforma as chaves do array em chaves especiais para sibstituição
         $links = '#' . implode('#&#', array_keys($values)) . '#';
 
         // Converte os chaves especiais em array
         $keys = explode('&', $links);
+
+     
 
         // Substitui as chaves especias pelos dados do array
         return $tpl ? str_replace($keys, array_values($values), $tpl) : null;
@@ -80,6 +83,8 @@ class FNC
      */
     public static function inLink(string $str, string $url, bool $uppercase = false)
     {
+        if (empty($str)) {return null;}
+
         $expTags = explode(',', trim($str));
         $links = '';
 

@@ -60,6 +60,7 @@ $JSECTIONS = [
     'users' => 'USUÁRIOS',
     'system' => 'SISTEMA',
     'perfil' => 'PERFIL',
+    'menu' => 'MENU DE NAVEGAÇÂO',
 ];
 
 // Topbar

@@ -1,0 +1,10 @@
+CREATE TABLE `jl_sessions` (
+  `ses_token` varchar(35) NOT NULL,
+  `ses_section` varchar(20) NOT NULL,
+  `ses_user` int(11) DEFAULT 0,
+  `ses_expire` varchar(20) NOT NULL,
+  `ses_ip` varchar(45) NOT NULL,
+  `ses_locked` tinyint(4) NOT NULL DEFAULT 0,
+  `ses_attempts` int(11) DEFAULT 0,
+  `ses_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

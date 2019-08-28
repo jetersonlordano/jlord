@@ -1,0 +1,9 @@
+CREATE TABLE `jl_downloads` (
+  `dwn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `dwn_countdown` int(11) DEFAULT 0,
+  `dwn_title` varchar(150) DEFAULT 'Novo arquivo',
+  `dwn_description` varchar(255) DEFAULT NULL,
+  `dwn_url` varchar(255) NOT NULL,
+  `dwn_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`dwn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

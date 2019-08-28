@@ -1,0 +1,21 @@
+CREATE TABLE `jl_users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_accesslevel` tinyint(2) NOT NULL DEFAULT 1,
+  `user_password` varchar(80) NOT NULL,
+  `user_name` varchar(45) NOT NULL DEFAULT 'Novo usuário',
+  `user_description` varchar(255) DEFAULT NULL,
+  `user_main` tinyint(1) DEFAULT 0,
+  `user_email` varchar(60) NOT NULL,
+  `user_phone` varchar(15) DEFAULT NULL,
+  `user_cpf` varchar(15) DEFAULT NULL,
+  `user_avatar` varchar(60) DEFAULT NULL,
+  `user_dateofbirth` date DEFAULT NULL,
+  `user_gender` enum('F','M') NOT NULL DEFAULT 'M',
+  `user_lastupdate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_lastsession` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_nickname` varchar(45) NOT NULL,
+  `user_address` varchar(200) NOT NULL,
+  `user_rg` varchar(15) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8

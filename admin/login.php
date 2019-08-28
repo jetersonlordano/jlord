@@ -86,7 +86,7 @@ $login = new Session('admin', ADM . '/', ADM . '/login.php');
                     </div>
 
                     <div class="footer_login gray center">
-                        <p>© <?= date('Y') ?> <a class="main" href="<?= HOME ?>/admin" title="Gerenciador de conteúdo JControl"><b><?= CMSNAME ?></b></a></p>
+                        <p>© <?= date('Y') ?> <a class="main" href="<?= HOME ?>/admin" title="Gerenciador de conteúdo JLord"><b><?= CMSNAME ?></b></a></p>
                         <p>Orgulhosamente desenvolvido por <a class="main" href="<?= DEVSITE ?>" rel="author" title="<?= DEVNAME ?> Web Developer"><?= DEVNAME ?></a></p>
                     </div>
 

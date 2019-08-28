@@ -1,0 +1,7 @@
+CREATE TABLE `jl_views` (
+  `views_id` int(11) NOT NULL AUTO_INCREMENT,
+  `views_date` date NOT NULL,
+  `views_sessions` int(11) NOT NULL DEFAULT 1,
+  `views_pages` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`views_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8

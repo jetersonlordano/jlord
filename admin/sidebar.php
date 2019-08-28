@@ -5,7 +5,7 @@ $SUPERUSER = $USERACTIVE[TBUSERS[1] . 'accesslevel'] == 10;
 
 $currentSection = $LINK->section != null ? $LINK->section : 'home';
 
-echo '<aside id="sidebar" class="bg-white box-shadow" data-visible="false"><div class="main_logo">JControl</div><nav id="navigation" class="nav" data-target="' . $currentSection . '"><a class="nav_item" href="' . ADM . '" title="Dashboard" data-section="home" data-active="false"><i class="fa fa-home"></i>Dashboard</a>';
+echo '<aside id="sidebar" class="bg-white box-shadow" data-visible="false"><div class="main_logo">JLord</div><nav id="navigation" class="nav" data-target="' . $currentSection . '"><a class="nav_item" href="' . ADM . '" title="Dashboard" data-section="home" data-active="false"><i class="fa fa-home"></i>Dashboard</a>';
 
 //  Categorias
 echo '<a class="nav_item" href="' . ADM . '/cats" title="Categorias" data-section="cats"><i class="fa fa-filter"></i>Categorias</a>';
@@ -13,8 +13,11 @@ echo '<a class="nav_item" href="' . ADM . '/cats" title="Categorias" data-sectio
 // Posts
 echo ($SUPERUSER || POSTS) ? '<a class="nav_item" href="' . ADM . '/posts" title="Posts" data-section="posts"><i class="fa fa-pencil"></i>Posts</a>' : null;
 
+// Menu
+echo '<a class="nav_item" href="' . ADM . '/menu" title="Menu de navegação" data-section="manu"><i class="fa fa-list"></i>Navegação</a>';
+
 // Páginas
-echo ($SUPERUSER || PAGES) ? '<a class="nav_item" href="' . ADM . '/pgs" title="Páginas" data-section="pgs"><i class="fa fa-file"></i>Páginas</a>' : null;
+// echo ($SUPERUSER || PAGES) ? '<a class="nav_item" href="' . ADM . '/pgs" title="Páginas" data-section="pgs"><i class="fa fa-file"></i>Páginas</a>' : null;
 
 // Analytics
 //echo ($SUPERUSER || ANALYTICS) ? '<a class="nav_item" href="' . ADM . '/analytics" title="Relatórios do sistema" data-section="analytics"><i class="fa fa-bar-chart-o"></i>Relatórios</a>' : null;

@@ -1,0 +1,10 @@
+CREATE TABLE `jl_navigation` (
+  `nav_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nav_name` varchar(45) NOT NULL,
+  `nav_menu` varchar(45) NOT NULL,
+  `nav_title` varchar(80) DEFAULT NULL,
+  `nav_url` varchar(150) DEFAULT NULL,
+  `nav_order` int(4) NOT NULL DEFAULT 0,
+  `nav_blank` tinyint(4) DEFAULT 0,
+  PRIMARY KEY (`nav_id`,`nav_order`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8

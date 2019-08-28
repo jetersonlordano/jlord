@@ -1,0 +1,10 @@
+CREATE TABLE `jl_config` (
+  `conf_id` int(11) NOT NULL AUTO_INCREMENT,
+  `conf_fnc` varchar(60) NOT NULL DEFAULT 'define',
+  `conf_name` varchar(45) NOT NULL,
+  `conf_value` varchar(255) NOT NULL,
+  `conf_file` varchar(45) NOT NULL DEFAULT 'client',
+  `conf_comment` varchar(100) NOT NULL,
+  `conf_type` varchar(45) NOT NULL DEFAULT 'string',
+  PRIMARY KEY (`conf_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8

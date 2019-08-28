@@ -33,20 +33,25 @@ $values = [
 ];
 
 $conn->insert(TBUSERS[0], $values);
-//echo $conn->exec() ? FNC::notify('Usuário cadastro e E-mail enviado com sucesso. ', 'success') : FNC::notify('E-mail de confirmação não enviado!', 'danger');
 
 if ($conn->exec()) {
-    $mail = new Mailer();
+
     $linkJ = HOME . '/admin ';
     $body = 'Você foi cadastrado no sistema ' . CMSNAME . '<br>';
     $body .= "Acesse o link <a href=\"{$linkJ}\" title=\"Acesso ao painel\">{$linkJ}</a>";
     $body .= ' para começar a usar.<br>';
     $body .= "<br><b>Usuário:</b> {$email}<br><b>Senha temporaria:</b> $password";
-    $body .= "<br><br><br><span><img style=\"display:inline-block;border-radius:50%;width:50px;vertical-align: top;\" src=\"https://plus.google.com/u/0/_/focus/photos/public/AIbEiAIAAABDCJmCsuC_qIfgICILdmNhcmRfcGhvdG8qKDYxZWJkNzMwNjBlYzE0N2Q1MmNhNDg5ZjhiMDZlN2FmNjJkNDAwY2UwAcffhyFiS6OHYKba4Bpg5F2n7w8_?sz=50\"
-            alt=\"Jeterson Lordano\"><span style=\"display: inline-block; margin-left: 10px; font-size: 13px;\"><b>Jeterson Lordano</b><br>Full Stack Web Developer<br></span></span>";
-    $mail->email('Novo usuário', $email, 'Acesso a plataforma', $body);
 
+    $emailSend = CMSNAME . " <" . EMAIL . ">";
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1;' . "\r\n";
+    $headers .= "Return-Path: $emailSend \r\n";
+    $headers .= "From: $emailSend \r\n";
+    $headers .= "Reply-To: $emailSend \r\n";
+
+    $sendMail = @mail($email, 'Acesso a plataforma', nl2br($body), $headers);
+   
     $callback = ['action' => 'reload'];
     $callback = json_encode($callback);
-    echo $mail->send() ? FNC::notify('Usuário cadastro e E-mail enviado com sucesso. ', 'success') : FNC::notify('E-mail de confirmação não enviado!', 'danger');
+    echo $sendMail ? FNC::notify('Usuário cadastro e E-mail enviado com sucesso. ', 'success') : FNC::notify('E-mail de confirmação não enviado!', 'danger');
 }

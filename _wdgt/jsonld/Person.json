@@ -1,9 +1,0 @@
-{
-    "@context": "http://schema.org/",
-    "@type": "Person",
-    "@id": "#id#",
-    "name": "#name#",
-    "jobTitle": "#jobTitle#",
-    "telephone": "#telephone#",
-    "url": "#url#"
-}

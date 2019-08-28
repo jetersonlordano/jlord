@@ -1,0 +1,20 @@
+CREATE TABLE `jl_posts` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_author` int(11) NOT NULL,
+  `post_category` int(11) NOT NULL,
+  `post_published` tinyint(1) DEFAULT 0,
+  `post_path` varchar(45) NOT NULL,
+  `post_title` varchar(220) DEFAULT 'Novo post',
+  `post_description` varchar(255) DEFAULT NULL,
+  `post_link` varchar(250) NOT NULL,
+  `post_content` text DEFAULT NULL,
+  `post_video` varchar(200) DEFAULT NULL,
+  `post_videoCover` tinyint(1) DEFAULT 1,
+  `post_cover` varchar(255) DEFAULT NULL,
+  `post_tags` varchar(200) DEFAULT NULL,
+  `post_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `post_lastupdate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `post_lastview` timestamp NOT NULL DEFAULT current_timestamp(),
+  `post_views` int(11) DEFAULT 0,
+  PRIMARY KEY (`post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8

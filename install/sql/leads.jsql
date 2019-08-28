@@ -1,0 +1,12 @@
+CREATE TABLE `jl_leads` (
+  `lead_id` int(11) NOT NULL AUTO_INCREMENT,
+  `lead_category` int(11) DEFAULT 0,
+  `lead_name` varchar(45) DEFAULT NULL,
+  `lead_email` varchar(60) DEFAULT NULL,
+  `lead_phone` varchar(15) DEFAULT NULL,
+  `lead_lp` varchar(80) NOT NULL,
+  `lead_lpname` varchar(80) NOT NULL,
+  `lead_confirm` tinyint(1) NOT NULL DEFAULT 0,
+  `lead_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`lead_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

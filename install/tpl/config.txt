@@ -19,7 +19,7 @@ session_start();
 define('DS', DIRECTORY_SEPARATOR);
 define('CMSNAME', 'JLord');
 define('TRANSFERPROTOCOL', isset($_SERVER['HTTPS']) ? 'https://' : 'http://');
-define('HOME', TRANSFERPROTOCOL . 'www.localhost/jlord/install');
+define('HOME', TRANSFERPROTOCOL . '#base#');
 define('ADM', HOME . '/admin');
 define('SESSIONUSERID', md5('user' . $_SERVER['HTTP_HOST'] . $_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT']));
 
@@ -32,10 +32,10 @@ define('DEVSITE', 'https://www.jetersonlordano.com.br');
 define('DEVTWITTERCREATOR', '@jetersonlordano');
 
 // Banco de dados
-define("DBHOST", 'localhost');
-define("DBNAME", 'jet');
-define("DBUSER", 'root');
-define("DBPASS", '');
+define("DBHOST", '#dbhost#');
+define("DBNAME", '#dbname#');
+define("DBUSER", '#dbuser#');
+define("DBPASS", '#dbpsw#');
 
 // E-mail autênticado
 define('SMTP', false);

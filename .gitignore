@@ -2,6 +2,7 @@
 _cacheDir/
 _tables/
 uploads/posts/*/
+_themes/jetersonlordano/
 
 ### VisualStudioCode ###
 .vscode/

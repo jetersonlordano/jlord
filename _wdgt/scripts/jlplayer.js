@@ -268,6 +268,10 @@
                 jlPlayerVideo.preload = 'none';
             }*/
 
+            // Remove botão de legenda se não encontrar nenhuma track...
+            if (!jlPlayerElem.getElementsByTagName('track')[0]) {
+                jlPlayerBtnCC.remove();
+            }
 
             if (jlPlayerVideo.preload == 'none') {
                 // Eventos de player e pause

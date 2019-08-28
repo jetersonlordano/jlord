@@ -25,10 +25,7 @@ class Pages
         // Preloader da página
         $loader = $this->addFiles('loader', $pageData[$FIX . 'file'], $path, 'loaders');
         $loader = $loader ?? $this->addFiles('loader', $file, $path, 'loaders');
-        if (!$loader && $pageData) {$this->addFiles('loader', 'loader', DEFAULTS, 'includes');}
-
-        // Init
-        $this->addFiles('init', 'init', DEFAULTS, 'includes');
+        $loader = $loader ?? $this->addFiles('loader', 'home', $path, 'loaders');
 
         // Header default
         $header = $this->addFiles('header', 'header', $path, 'includes');
@@ -38,15 +35,12 @@ class Pages
         // Conteúdo da página
         $page = $this->addFiles('page', $pageData[$FIX . 'file'], $path);
         $page = $page ?? $this->addFiles('page', $file, $path);
-        $page = $page ?? $this->addFiles('page', 'default', DEFAULTS, 'includes');
+        $page = $page ?? $this->addFiles('page', 'home', $path);
 
         // Footer default
         $footer = $this->addFiles('footer', 'footer', $path, 'includes');
         if (!$footer) {PHPNOTIFY("Crie o arquivo 'footer.php' no diretório {$path}includes");die;}
         if ($pageData) {$this->addFiles('footer', $pageData[$FIX . 'footer'], $path, 'includes');}
-
-        // End
-        $this->addFiles('end', 'end', DEFAULTS, 'includes');
 
         // Dados da página
         $this->data = $pageData;
@@ -89,10 +83,6 @@ class Pages
             $searchPage = $searchPage ? FNC::convertStr($search['page']) : 'pesquisa';
             $search = urlencode(strip_tags(trim($search['search'])));
 
-            if (!$this->checkFile($path, 'loaders', $searchPage)) {PHPNOTIFY("Crie o arquivo {$path}loaders" . DS . $searchPage . '.php');die;}
-
-            if (!$this->checkFile($path, null, $searchPage)) {PHPNOTIFY("Crie o arquivo {$path}{$searchPage}.php");die;}
-
             header('Location: ' . HOME . '/' . $searchPage . '/' . $search);
             die;
         }
@@ -103,6 +93,7 @@ class Pages
      */
     private function loadPages($page)
     {
+        return null;
         $FIX = TBPAGES[1];
         $terms = "WHERE {$FIX}link = :link AND ({$FIX}published >= :published AND {$FIX}theme = :theme) LIMIT 1";
         $published = isset($_GET['jview']) ? 0 : 1;
