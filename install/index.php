@@ -33,17 +33,16 @@ $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
             <div class="form_section">
 
                 <label for="username">Nome:</label>
-                <input type="text" id="username" name="username" placeholder="Digite seu nome" value="Jeterson Lordano" required>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome" required>
 
                 <label for="login">Email:</label>
-                <input type="email" id="login" name="login" placeholder="Digite seu email" value="jetersonlordano@gmail.com" required>
+                <input type="email" id="login" name="login" placeholder="Digite seu email" required>
 
                 <label for="psw">Senha:</label>
-                <input type="password" name="psw" id="psw" placeholder="Defina uma senha" value="useradmin" minlength="8">
+                <input type="password" name="psw" id="psw" placeholder="Defina uma senha" minlength="8">
 
                 <label for="url">Domínio:</label>
                 <input class="input_url" type="url" name="base" id="base" value="<?=$urlMain?>" readonly required>
-
 
                 <input class="input_check" type="checkbox" name="www" id="www" title="usar WWW">
                 <label class="check_label" for="www">Usar www no domínio</label>
@@ -51,16 +50,16 @@ $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
 
             <div class="form_section">
                  <label for="host">Servidor:</label>
-                 <input type="text" name="host" placeholder="Servidor do banco de dados" id="host" value="localhost" required>
+                 <input type="text" name="host" placeholder="Servidor de dados" id="host"  required>
 
                  <label for="dbname">banco de dados:</label>
-                 <input type="text" name="dbname" placeholder="Nome do banco de dados" id="dbname" required value="jet">
+                 <input type="text" name="dbname" placeholder="Nome do banco de dados" id="dbname" required >
 
                  <label for="dbuser">Usuário:</label>
-                 <input type="text" name="dbuser" id="dbuser" placeholder="Usuário do banco de dados" value="root" required>
+                 <input type="text" name="dbuser" id="dbuser" placeholder="Usuário do banco de dados" required>
 
                  <label for="dbpsw">Senha:</label>
-                 <input type="password" name="dbpsw" id="dbpsw" placeholder="Senha do banco de dados" value="">
+                 <input type="password" name="dbpsw" id="dbpsw" placeholder="Senha do banco de dados">
 
                  <button type="submit">Instalar</button>
             </div>
