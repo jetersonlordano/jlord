@@ -1,0 +1,48 @@
+:root {
+    --main: #00cff2;
+    --main-hover: #00B8D9;
+    --contrast: #fff;
+
+    --light: #e5e5e5;
+    --medium: #989898;
+    --dark: #105d6a;
+
+    --primary: #232323;
+    --primary-hover: #464646;
+
+    --secondary: #767676;
+    --secondary-hover: #565656;
+
+    --success: #28a745;
+    --success-hover: #207F60;
+
+    --danger: #dc3545;
+    --danger-hover: #dd1e31;
+
+    --warning: #ffc107;
+    --warning-hover: #ce9c07;
+
+    --info: #17a2b8;
+    --info-hover: #1a92a5;
+
+    --input-border-color: #ccc;
+    --input-shadow-hover: 0 0 8px rgba(5, 142, 255, 0.6);
+
+    --shadow: 0px 5px 5px 0px rgba(102,102,102,.1);
+    --ts-duration: .2s;
+
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 600;
+    --font-bold: 700;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: var(--primary)
+}
+
+body,
+textarea {
+    font-family: "Montserrat", sans-serif
+}

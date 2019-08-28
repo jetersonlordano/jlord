@@ -1,0 +1,104 @@
+#mainWrapper{margin-top: 40px}
+
+#topBar{border-bottom: thin solid var(--light)}
+#topBar .row{min-height: 80px; padding-top: 30px; padding-bottom: 30px}
+.main_logo{margin-left:15px;margin-right:15px;}
+.main_logo img{max-height: 50px; max-width: 180px; display: block;}
+
+
+/* Main Nav */
+.nav_resp{margin-left:15px;margin-right:15px; position: relative; z-index: 99}
+.nav_icon{display: block; cursor: pointer}
+.nav_icon span{display: block; width: 25px; height: 4px; margin-bottom: 5px; background-color: var(--main); -webkit-transition: 0.2s;  transition: 0.2s; border-radius: 3px; }
+.nav_icon span:last-child{margin-bottom: 0 !important;}
+.nav_icon[data-open="true"] .bar1{-webkit-transform: rotate(-45deg) translate(-7px, 6px); transform: rotate(-45deg) translate(-7px, 6px);}
+.nav_icon[data-open="true"] .bar2{opacity: 0;}
+.nav_icon[data-open="true"] .bar3{-webkit-transform: rotate(45deg) translate(-7px, -5px);transform: rotate(45deg) translate(-7px, -5px);}
+
+
+#mainNav{position: relative; display: block; width: 100%;}
+#mainNav a{font-size: 1.3em; display: block; font-weight: var(--font-medium); color: var(--primary); background-color: #fff; width: calc(100% - 30px); margin-left: 15px; height: 100%; transition: background-color .2s, color .2s; line-height: 46px; padding-left: 15px; padding-right: 15px; border-radius: 6px;}
+#mainNav a:hover{background-color: var(--main); color: #fff}
+#mainNav ul{display: block; width: 100%; padding-top: 0; transition: padding-top .2s}
+#mainNav li{display: block; width: 100%; height: 0; overflow: hidden; transition: height .2s}
+#mainNav[data-open="true"] ul{padding-top: 20px;}
+#mainNav[data-open="true"] li{height: 46px;}
+
+
+@media only screen and (min-width: 768px){
+    .nav_icon{display: none}
+    #mainNav{width: auto; padding-right: 15px;}
+    #mainNav li{display: inline-block; height: 36px; width: auto; overflow: auto;}
+    #mainNav a{padding-left: 15px; padding-right: 15px; width: auto; line-height: 36px; height: auto; font-size: 1.1em; margin-left: 0;}
+    #mainNav ul{padding-top: 0;}
+    #mainNav[data-open="true"] ul{padding-top: 0;}
+    #mainNav[data-open="true"] li{height: 36px;}
+}
+
+.aside_item{background-color: #fff; border: thin solid var(--light); border-radius: 6px; padding: 20px; margin-bottom: 40px}
+.aside_item:last-child{margin-bottom: 0;}
+
+/* Blog Search */
+.sidebar_search{border: thin solid var(--light); border-radius: 6px; display: block}
+.sidebar_search form{display: flex; padding: 0;}
+.sidebar_search input[type="search"]{flex: 1; padding: 5; font-size: 1.2em;}
+.sidebar_search button{background-color: transparent; padding: 20px; fill: var(--main)}
+.sidebar_search svg{display: block; width: 17px; height: 17px; }
+.sidebar_search button:hover{fill: var(--main-hover)}
+
+.sidebar_search input[type="search"]::-webkit-search-cancel-button{-webkit-appearance: none;}
+.sidebar_search input[type="search"]:-webkit-autofill,
+.sidebar_search input[type="search"]:-webkit-autofill:hover, 
+.sidebar_search input[type="search"]:-webkit-autofill:focus{-webkit-text-fill-color: #fff;}
+
+
+/* Author */
+.aside_author{position: relative;  z-index: 1; padding: 40px}
+.aside_author:before{position: absolute; content: ""; display: block; width: 100%; height: 130px; background-color: var(--main); top: 0; left: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;  z-index: -1;}
+.aside_author_img{width: 150px; height: 150px; padding: 10px; background-color: #fff; display: block; }
+.aside_author h5{display: block; width: 100%; text-align: center; font-size: 1.3em; margin-bottom: 5px;}
+.aside_author p{font-size:1em; max-width: 300px;}
+
+
+.aside_item_title{display: block; margin-bottom: 20px; margin-top: 40px; font-size: 0.9em; text-transform: uppercase; color: var(--secondary)}
+.aside_item_title:first-child{margin-top: 0}
+
+.aside_article{display: block; border-bottom: thin solid var(--light); padding-bottom: 20px; margin-bottom: 20px}
+.aside_article:last-child{border-bottom: none; margin-bottom: 0}
+.aside_article_cover{display: block; margin-bottom: 10px}
+.aside_article_cover img{border-radius: 6px;}
+.aside_article h3{display: block; font-size: 1.1em;}
+.aside_article h3 a{transition: color .2s}
+.aside_article h3 a:hover{color: var(--main)}
+
+
+.aside_catogories{display: block; border: thin solid var(--light); background-color: #f9f9f9; border-radius: 6px}
+.aside_catogories li{display: block; border-bottom: thin solid var(--light); padding: 16px 14px; line-height: 18px; font-size: 0.9em}
+.aside_catogories li:last-child{border-bottom: none}
+.aside_catogories a{color: var(--main); font-weight: var(--font-medium); transition: color .2s}
+.aside_catogories a:hover{color: var(--main-hover)}
+.aside_catogories li span{color: var(--medium)}
+.aside_catogories .angle{float: right; font-size: 18px; color: var(--medium)}
+
+
+.aside_tags a{text-transform: uppercase; color: var(--medium); border-radius: 6px; padding: 8px; padding-top: 10px; border: thin solid var(--light); margin-bottom: 6px; margin-right: 4px; font-size: 0.9em; line-height: 1; transition: color .2s}
+.aside_tags a:hover{color: var(--main)}
+
+
+/* Footer */
+#mainFooter{padding-top: 40px; border-top: thin solid var(--light)}
+.footer_title{position: relative; font-size: 1em; color: var(--main);  font-weight: var(--font-medium); display: block; padding-bottom: 8px; margin-bottom: 20px; text-transform: uppercase; border-bottom: thin solid var(--light)}
+
+.footer_social a{background-color: var(--light); width: 40px; height: 40px; line-height: 40px; text-align: center; font-size: 1.5em; border-radius: 6px; color: var(--medium); margin-bottom: 3px; transition: .2s}
+.footer_social a:hover{color: #fff; background-color: var(--main)}
+
+.footer_nav li, .footer_contato li{display: block; margin-bottom:6px;}
+.footer_nav a{color: var(--secondary); line-height: 1.5; font-size: 1.2em;}
+.footer_nav a:hover, .footer_contato a:hover{text-decoration: underline}
+
+.footer_contato a{color: var(--secondary); line-height: 1.5}
+.footer_contato i{display: inline-block; margin-right: 5px}
+
+.footer_copyright{margin-top: 20px; font-size: 1em}
+.footer_copyright a{color: inherit; font-weight: normal; transition: .2s;}
+.footer_copyright a:hover{color: var(--main)}

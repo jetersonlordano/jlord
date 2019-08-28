@@ -1,0 +1,13 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,select,small,span,strike,strong,sub,summary,sup,table,tbody,td,textarea,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;-webkit-box-sizing:border-box;box-sizing:border-box}
+article, aside, details, figcaption, figure, footer, header, menu, nav, section{display:block}
+ol, ul {list-style: none}
+blockquote, q {quotes: none}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none}
+table {border-collapse: collapse; border-spacing: 0}
+body {font-weight: normal; line-height: 1; letter-spacing: 0; font-size: 13px}
+a, abbr {text-decoration: none; color: inherit}
+p {font-size: 1.4em; line-height: 1.5; margin-bottom: 20px; font-weight: var(--font-light)}
+p:last-child {margin-bottom: 0}
+p strong, p b {font-weight: var(--font-bold)}
+p a {color: var(--main); font-weight: var(--font-medium); -webkit-transition: color var(--ts-duration); -o-transition: color var(--ts-duration); transition: color var(--ts-duration)}
+p a:hover {text-decoration: underline}

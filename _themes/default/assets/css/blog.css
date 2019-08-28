@@ -1,0 +1,15 @@
+.post_box{display: block;background-color: #fff; border-radius: 6px; border: thin solid var(--light); margin-bottom: 40px;}
+.post_box:last-child{margin-bottom: 0;}
+.post_box_img{display: block}
+.post_box_img img{border-top-left-radius: 6px; border-top-right-radius: 6px}
+.post_box_content{display: block; padding: 20px;}
+.post_box_info{margin-bottom: 20px; padding-bottom: 20px; font-size: 0.9em; color: var(--secondary);}
+.post_box_date i{display: inline-block; margin-right: 5px}
+.post_box h2{font-size: 2em; display: block; margin-bottom: 20px;}
+.post_box h2 a{transition: color .2s;}
+.post_box h2 a:hover{color: var(--main)}
+.post_box_description{margin-bottom: 20px; padding-bottom: 20px;}
+.post_box_more, .post_box_go{color: var(--main); text-transform: uppercase; transition: color .2s; font-size: 0.9em; font-weight: var(--font-medium); display: inline-block; vertical-align: middle; line-height: 20px;}
+.post_box_more:hover, .post_box_go:hover{color: var(--main-hover)}
+.post_box_go{font-size: 18px;}
+.posts_pagination a{margin-top: 20px;}

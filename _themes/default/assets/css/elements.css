@@ -1,0 +1,45 @@
+/* Buttons */
+.btn {display: inline-block; white-space: nowrap; cursor: pointer; text-decoration: none; outline: none; border: none; text-align: center; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-transition: background-color var(--ts-duration), color var(--ts-duration), -webkit-box-shadow var(--ts-duration); -o-transition: background-color var(--ts-duration), color var(--ts-duration), box-shadow var(--ts-duration); transition: background-color var(--ts-duration), color var(--ts-duration), box-shadow var(--ts-duration)}
+
+.btn-main{background-color: var(--main); color: var(--contrast)}
+.btn-main:hover{background-color: var(--main-hover)}
+
+.btn-primary{background-color: var(--primary); color: #fff}
+.btn-primary:hover{background-color: var(--primary-hover)}
+
+.btn-secondary{background-color: var(--secondary); color: #fff}
+.btn-secondary:hover{background-color: var(--secondary-hover)}
+
+.btn-success{background-color: var(--success); color: #fff}
+.btn-success:hover{background-color: var(--success-hover)}
+
+.btn-danger{background-color: var(--danger); color: #fff}
+.btn-danger:hover{background-color: var(--danger-hover)}
+
+.btn-warning{background-color: var(--warning); color: #fff}
+.btn-warning:hover{background-color: var(--warning-hover)}
+
+.btn-info{background-color: var(--info); color: #fff}
+.btn-info:hover{background-color: var(--info-hover)}
+
+.btn-xs{padding: 2px 5px; line-height: 1.5; font-size: 1em; border-radius: 4px}
+.btn-sm{padding: 5px 10px; line-height: 1.5; font-size: 1em; border-radius: 4px}
+.btn-md{padding: 8px 15px; font-size: 1.3em; line-height: 1.5; border-radius: 4px}
+.btn-lg{padding: 10px 16px; font-size: 1.6em; line-height: 1.5; border-radius: 4px}
+.btn-block{display: block; width: 100%;}
+
+/* Loader */
+.btn-xs .loader-arc{width: 8px; height: 8px}
+.btn-sm .loader-arc{width: 9px; height: 9px}
+.btn-md .loader-arc{width: 12px; height: 12px}
+.btn-lg .loader-arc{width: 16px; height: 16px}
+
+.loader-arc{position: relative; display: inline-block; border-radius: 100%; background: inherit; -webkit-animation: loadarc .8s infinite linear; animation: loadarc .8s infinite linear}
+.arc1{position: relative; display: block; background-color: #fff; width: 100%; height: 100%; border-radius: 100%}
+.arc2, .arc3, .arc4{position: absolute; width: 50%; height: 50%; background-color: inherit}
+.arc2, .arc4{border-radius: 90% 0 0 0; top: 0; left: 0}
+.arc3, .arc4{border-radius: 0 0 90% 0; bottom: 0; right: 0}
+.arc4{width: 70%; height: 70%; margin: auto; border-radius: 50%; top: 0}
+
+@-webkit-keyframes loadarc{0% {-webkit-transform: rotate(0deg); transform: rotate(0deg) } 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg)}}
+@keyframes loadarc{ 0% {-webkit-transform: rotate(0deg); transform: rotate(0deg) } 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg)}}

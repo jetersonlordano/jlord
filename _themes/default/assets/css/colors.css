@@ -1,0 +1,22 @@
+/* Text */
+.text-main{color: var(--main)}
+.text-contrast{color: var(--contrast)}
+.text-primary{color: var(--primary)}
+.text-secondary{color: var(--secondary)}
+.text-success{color: var(--success)}
+.text-danger{color: var(--danger)}
+.text-warning{color: var(--warning)}
+.text-info{color: var(--info)}
+.text-white{color: #fff}
+
+/* Backgrounds */
+.bg-main{background-color: var(--main)}
+.bg-main-hover{background-color: var(--main-hover)}
+.bg-primary{background-color: var(--primary)}
+.bg-contrast{background-color: var(--contrast)}
+.bg-secondary{background-color: var(--secondary)}
+.bg-success{background-color: var(--success)}
+.bg-danger{background-color: var(--danger)}
+.bg-warning{background-color: var(--warning)}
+.bg-info{background-color: var(--info)}
+.bg-white{background-color: #fff;}
