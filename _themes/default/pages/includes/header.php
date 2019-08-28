@@ -33,14 +33,7 @@ if (SEO) {
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="<?=ADD?>/assets/css/vars.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/reset.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/colors.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/grid.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/helpers.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/elements.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/main.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/post.css">
-    <link rel="stylesheet" href="<?=ADD?>/assets/css/blog.css">
+    <link rel="stylesheet" href="<?=ADD?>/assets/css/style.min.css">
     <link rel="stylesheet" href="<?=ADD?>/assets/icons/css/font-awesome.css">
     <?php if ($LINK->index[0] == 'post') {echo '<link rel="stylesheet" href="' . HOME . '/_wdgt/css/jlplayer.css">';}?>
 
@@ -57,7 +50,7 @@ if (SEO) {
             <div class="row justify-content-between">
 
                 <a class="main_logo flex align-items-center align-content-center" href="<?=HOME?>" title="<?=TITLE?>">
-                    <img src="<?=HOME?>/<?=PATHAUTHORS?>logo-default.png" alt="<?=TITLE?>">
+                    <img src="<?=LOGO?>" alt="<?=TITLE?>">
                 </a>
 
 

@@ -10,7 +10,7 @@ require 'Config.inc.php';
 
 // Informações do site
 define('TITLE', 'JLord');
-define('DESCRIPTION', 'Mais um site criado com JLord');
+define('DESCRIPTION', 'Mais um site desenvolvido com JLord');
 define('THEME', 'default');
 
 // Timezone

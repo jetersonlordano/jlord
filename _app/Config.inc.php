@@ -33,7 +33,7 @@ define('DEVTWITTERCREATOR', '@jetersonlordano');
 
 // Banco de dados
 define("DBHOST", 'localhost');
-define("DBNAME", 'jet');
+define("DBNAME", 'beta');
 define("DBUSER", 'root');
 define("DBPASS", '');
 
@@ -75,7 +75,7 @@ define('AVATAR', HOME . '/' . DEFAULTS . '/images/avatar-default.svg');
 define('IMAGE', HOME . '/' . DEFAULTS . '/images/image-default.svg');
 
 // Branding
-define('LOGO', HOME . '/uploads/branding/logo.png');
+define('LOGO', HOME . '/uploads/branding/logo-default.png');
 define('COVER', HOME . '/uploads/covers/cover-default.jpg');
 define('COVERW', null);
 define('COVERH', null);
