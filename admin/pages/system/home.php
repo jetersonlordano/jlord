@@ -91,7 +91,22 @@ echo Form::input('text', 'THEME', 'Tema do site', 'Tema do site', 'input-width-5
 setConfig('THEME', 'Informações do site', 'default');
 
 // TIMEZONE
-$TIMEZONE = ['America/Sao_Paulo' => 'São Paulo'];
+$TIMEZONE = [
+    'America/Araguaia' => 'Araguaia',
+    'America/Bahia' => 'Bahia',
+    'America/Belem' => 'Belém',
+    'America/Boa_Vista' => 'Boa Vista',
+    'America/Campo_Grande' => 'Campo Grande',
+    'America/Cuiaba' => 'Cuiabá',
+    'America/Fortaleza', 'Fortaleza',
+    'America/Maceio' => 'Maceió',
+    'America/Manaus' => 'Manaus',
+    'America/Porto_Velho' => 'Porto Velho',
+    'America/Recife' => 'Recife',
+    'America/Rio_branco' => 'Rio branco',
+    'America/Sao_Paulo' => 'São Paulo',
+];
+
 echo Form::Select('TIMEZONE', 'Fuso horário', 'Fuso horário do sistema', 'input-width-50', $TIMEZONE, 'America/Sao_Paulo', true);
 setConfig('TIMEZONE', 'Timezone', getValue('TIMEZONE') ?? 'America/Sao_Paulo', null, 'date_default_timezone_set');
 
@@ -107,53 +122,10 @@ echo Form::Save('Salvar', 'systemLoader', 'system', true);
 echo '</form></div></div></div>';
 
 /**
- * Recursos do sistema
- */
-setConfig('POSTS', 'Recursos do sistema', 'true', 'boolean');
-setConfig('PAGES', 'Recursos do sistema', 'true', 'boolean');
-setConfig('USERSONLINE', 'Recursos do sistema', 'true', 'boolean');
-setConfig('ANALYTICS', 'Recursos do sistema', 'true', 'boolean');
-setConfig('SEARCH', 'Recursos do sistema', 'true', 'boolean');
-setConfig('SEO', 'Recursos do sistema', 'true', 'boolean');
-
-if ($SUPERUSER):
-
-    echo '<div class="col"><div class="card radius bg-white box-shadow"><div class="card-body"><div class="card-title">RECURSOS</div></div><div class="card-body bg-light"><form class="form-flex radius" id="resources" name="resources" action="javascript:void(0);" method="post"><input type="hidden" name="form" value="resources">';
-
-    $ONOFF = ['true' => 'Ativado', 'false' => 'Desativado'];
-
-    // POSTS
-    echo Form::Select('POSTS', 'Posts', 'Postagens de artigos', 'input-width-50', $ONOFF, getValue('POSTS') ?? 'false', true);
-
-    // PAGES
-    echo Form::Select('PAGES', 'Páginas', 'Gerenciamento de páginas', 'input-width-50', $ONOFF, getValue('PAGES') ?? 'false', true);
-
-    // USERSONLINE
-    echo Form::Select('USERSONLINE', 'Usuários Online', 'Contador de usuários Online', 'input-width-50', $ONOFF, getValue('USERSONLINE') ?? 'false', true);
-
-    // ANALYTICS
-    echo Form::Select('ANALYTICS', 'Análises do sistema', 'Análises do sistema', 'input-width-50', $ONOFF, getValue('ANALYTICS') ?? 'false', true);
-
-    // SEARCH
-    echo Form::Select('SEARCH', 'Pesquisas', 'Análises de pesquisas', 'input-width-50', $ONOFF, getValue('SEARCH') ?? 'false', true);
-
-    // SEO
-    echo Form::Select('SEO', 'SEO', 'Otimização para mecanismos de busca', 'input-width-50', $ONOFF, getValue('SEO') ?? 'false', true);
-
-    // Save
-    echo Form::Save('Salvar', 'resourcesLoader', 'resources', true);
-
-    echo '</form></div></div></div>';
-
-    echo "<script async>(function() {submitForm({file: 'async/system/client.php', loader: 'resourcesLoader'}, 'resources');})();</script>";
-
-endif;
-
-/**
  * Informaçoes sobre o negócio
  */
 
-echo '<div class="col"><div class="card radius bg-white box-shadow"><div class="card-body"><div class="card-title">EMPRESA</div></div><div class="card-body bg-light"><form class="form-flex radius" id="business" name="business" action="javascript:void(0);" method="post"><input type="hidden" name="form" value="business">';
+echo '<div class="col"><div class="card radius bg-white box-shadow"><div class="card-body"><div class="card-title">CONTATOS</div></div><div class="card-body bg-light"><form class="form-flex radius" id="business" name="business" action="javascript:void(0);" method="post"><input type="hidden" name="form" value="business">';
 
 // PHONE
 echo Form::Input('tel', 'PHONE', 'Telefone', 'Telefone', 'input-width-50', getValue('PHONE') ?? '', true, 15);
@@ -185,6 +157,49 @@ echo Form::Save('Salvar', 'businessLoader', 'business', true);
 echo '</form></div></div></div>';
 
 /**
+ * Recursos do sistema
+ */
+setConfig('POSTS', 'Recursos do sistema', 'true', 'boolean');
+setConfig('PAGES', 'Recursos do sistema', 'true', 'boolean');
+setConfig('USERSONLINE', 'Recursos do sistema', 'true', 'boolean');
+setConfig('ANALYTICS', 'Recursos do sistema', 'true', 'boolean');
+setConfig('SEARCH', 'Recursos do sistema', 'true', 'boolean');
+setConfig('SEO', 'Recursos do sistema', 'true', 'boolean');
+
+if ($SUPERUSER):
+
+    echo '<div class="col"><div class="card radius bg-white box-shadow"><div class="card-body"><div class="card-title">RECURSOS</div></div><div class="card-body bg-light"><form class="form-flex radius" id="resources" name="resources" action="javascript:void(0);" method="post"><input type="hidden" name="form" value="resources">';
+
+    $ONOFF = ['true' => 'Ativado', 'false' => 'Desativado'];
+
+    // POSTS
+    echo Form::Select('POSTS', 'Posts', 'Postagens de artigos', 'input-width-50', $ONOFF, getValue('POSTS') ?? 'true', true);
+
+    // PAGES
+    echo Form::Select('PAGES', 'Páginas', 'Gerenciamento de páginas', 'input-width-50', $ONOFF, getValue('PAGES') ?? 'true', true);
+
+    // USERSONLINE
+    echo Form::Select('USERSONLINE', 'Usuários Online', 'Contador de usuários Online', 'input-width-50', $ONOFF, getValue('USERSONLINE') ?? 'true', true);
+
+    // ANALYTICS
+    echo Form::Select('ANALYTICS', 'Análises do sistema', 'Análises do sistema', 'input-width-50', $ONOFF, getValue('ANALYTICS') ?? 'true', true);
+
+    // SEARCH
+    echo Form::Select('SEARCH', 'Pesquisas', 'Análises de pesquisas', 'input-width-50', $ONOFF, getValue('SEARCH') ?? 'true', true);
+
+    // SEO
+    echo Form::Select('SEO', 'SEO', 'Otimização para mecanismos de busca', 'input-width-50', $ONOFF, getValue('SEO') ?? 'true', true);
+
+    // Save
+    echo Form::Save('Salvar', 'resourcesLoader', 'resources', true);
+
+    echo '</form></div></div></div>';
+
+    echo "<script async>(function() {submitForm({file: 'async/system/client.php', loader: 'resourcesLoader'}, 'resources');})();</script>";
+
+endif;
+
+/**
  * APIs
  */
 
@@ -194,9 +209,9 @@ echo '<div class="col"><div class="card radius bg-white box-shadow"><div class="
 echo Form::Input('text', 'GOOGLEANALYTICSID', 'ID Google Analytics', 'ID Google Analytics', 'input-width-50', getValue('GOOGLEANALYTICSID') ?? '', false, 45);
 setConfig('GOOGLEANALYTICSID', 'APIS');
 
-// FACEBOOKPAGEID
-echo Form::Input('text', 'FACEBOOKPAGEID', 'ID Facebook Page', 'ID Facebook Page', 'input-width-50', getValue('FACEBOOKPAGEID') ?? '', false, 45);
-setConfig('FACEBOOKPAGEID', 'APIS');
+// FACEBOOKAPPID
+echo Form::Input('text', 'FACEBOOKAPPID', 'ID Facebook App', 'ID Facebook App', 'input-width-50', getValue('FACEBOOKAPPID') ?? '', false, 45);
+setConfig('FACEBOOKAPPID', 'APIS');
 
 // Save
 echo Form::Save('Salvar', 'apisLoader', 'apis', true);
@@ -251,7 +266,7 @@ $SOCIALNETWORKS = selectSociais();
 
 $FIXSN = TBNET[1];
 if ($SOCIALNETWORKS) {foreach ($SOCIALNETWORKS as $keys => $SN) {
-    
+
     $nameSN = $SN[$FIXSN . 'name'];
     $titleSN = ucfirst($nameSN);
     $reqSN = $nameSN == 'facebook' ? true : false;

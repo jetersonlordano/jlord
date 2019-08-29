@@ -41,7 +41,7 @@ define('COORDINATES', '');
 
 // APIS
 define('GOOGLEANALYTICSID', '');
-define('FACEBOOKPAGEID', '');
+define('FACEBOOKAPPID', '');
 
 // Redes sociais
 define('SOCIALNETWORKS', []);

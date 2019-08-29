@@ -43,7 +43,7 @@ if (SEO) {
 
 <body>
 
-    <?php if ($LINK->index[0] == 'post' && FACEBOOKPAGEID) {echo '<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0&appId=' . FACEBOOKPAGEID . '&autoLogAppEvents=1"></script>';}?>
+    <?php if ($LINK->index[0] == 'post' && FACEBOOKAPPID) {echo '<div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0&appId=' . FACEBOOKAPPID . '&autoLogAppEvents=1"></script>';}?>
 
     <div id="topBar" class="wrapper bg-white">
         <div class="container">
