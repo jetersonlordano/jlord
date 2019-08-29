@@ -5,8 +5,8 @@
 
 if (phpversion() < '7.0') {die('A versão do PHP não é compátivel com o JLord!<br> Instale o PHP 7.0 ou superior');}
 
-$urlMain = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$urlMain = str_replace('install', '', $urlMain);
+$urlMain = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$urlMain = str_replace(['install', 'www.'], '', $urlMain);
 $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
 $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
 
