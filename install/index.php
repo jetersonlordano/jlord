@@ -107,7 +107,8 @@ $HOME = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['R
                         $('#returnTitle').innerHTML = 'Feito!';
                         $('#returnText').innerHTML = jsonObj['msg'];
                         $on($('#btnReturn'), 'click', function(){
-                            window.location.href= '<?=$HOME?>/admin';
+                            //window.location.href= '<?=$HOME?>/admin/login.php';
+                            alert('<?=$HOME?>/admin/login.php');
                         }, !0);
 
                     } catch (e) {
