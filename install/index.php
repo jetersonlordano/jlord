@@ -10,8 +10,6 @@ $urlMain = str_replace(['install', 'www.'], '', $urlMain);
 $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
 $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
 
-$HOME = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
 ?>
 
 <head>
@@ -107,8 +105,7 @@ $HOME = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['R
                         $('#returnTitle').innerHTML = 'Feito!';
                         $('#returnText').innerHTML = jsonObj['msg'];
                         $on($('#btnReturn'), 'click', function(){
-                            //window.location.href= '<?=$HOME?>/admin/login.php';
-                            alert('<?=$HOME?>/admin/login.php');
+                            window.location.reload(true);
                         }, !0);
 
                     } catch (e) {
