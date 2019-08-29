@@ -10,6 +10,8 @@ $urlMain = str_replace(['install', 'www.'], '', $urlMain);
 $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
 $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
 
+$HOME = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
 ?>
 
 <head>
@@ -18,8 +20,6 @@ $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instalação do JLord</title>
     <link rel="stylesheet" href="install.css">
-    <link rel="icon" href="uploads/covers/cover-default.png" type="image/png">
-
 
     <script>"use strict"; function $(t, e) { let n; switch (e = "string" == typeof e ? $(e) : e || document, t.substring(0, 1)) { case "#": n = "getElementById", t = t.substring(1); break; case ".": n = "getElementsByClassName", t = t.substring(1); break; default: n = "getElementsByTagName" }return e[n](t) } function $on(t, e, n, o, a) { let i = e.split(" "); for (var r = 0; r < i.length; r++)t[o ? "addEventListener" : "removeEventListener"](i[r], n, a) } function ajax(t) { let e, n, o, a; o = (n = -1 !== String(t.data).indexOf("FormData")) ? "X-Requested-With" : "Content-type", a = n ? "XMLHttpRequest" : "application/json; charset=utf-8", $on((e = new (window.XMLHttpRequest || ActiveXObject("MSXML2.XMLHTTP.3.0"))).upload, "abort error load loadend loadstart progress", t.upload, !0), $on(e, "readystatechange", function () { 4 === this.readyState && (200 === this.status ? t.success(this) : t.error(this)) }, !0), e.open(t.method || "POST", t.url || window.location.href, !0, t.user, t.psw), e.setRequestHeader(o, t.contentType || a), e.send("object" != typeof t.data || n ? t.data : JSON.stringify(t.data)), t.start && t.start() } function lazyImages() { function t(t) { function e() { (function (t) { return t.getBoundingClientRect().top <= (window.innerHeight || document.documentElement.clientHeight) && t.getBoundingClientRect().bottom >= 0 })(t) && (!function (t) { t.src = t.getAttribute("data-lazy"), t.removeAttribute("data-lazy") }(t), $on(document, "scroll", e, 0), $on(window, "resize orientationchange", e, 0)) } $on(document, "DOMContentLoaded scroll", e, !0), $on(window, "resize orientationchange", e, !0) } let e = document.querySelectorAll("img[data-lazy]"); for (let n = 0; n < e.length; n++)new t(e[n]) } lazyImages();</script>
 </head>
@@ -92,7 +92,7 @@ $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
        $on($('#formInstall'), 'submit', installSystem, !0);
         function installSystem(evt) {
             ajax({
-                url: '<?=$urlMain?>/install/install.php',
+                url: 'install.php',
                 start: function () {
                     $('#loader').style.display = 'flex';
                 },
@@ -107,7 +107,7 @@ $urlMain = substr($urlMain, -1) == '/' ? substr($urlMain, 0, -1) : $urlMain;
                         $('#returnTitle').innerHTML = 'Feito!';
                         $('#returnText').innerHTML = jsonObj['msg'];
                         $on($('#btnReturn'), 'click', function(){
-                            window.location.href= '<?=$urlMain?>/admin';
+                            window.location.href= '<?=$HOME?>/admin';
                         }, !0);
 
                     } catch (e) {
