@@ -12,7 +12,7 @@ CREATE TABLE `jl_posts` (
   `post_videoCover` tinyint(1) DEFAULT 1,
   `post_cover` varchar(255) DEFAULT NULL,
   `post_tags` varchar(200) DEFAULT NULL,
-  `post_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `post_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `post_lastupdate` timestamp NOT NULL DEFAULT current_timestamp(),
   `post_lastview` timestamp NOT NULL DEFAULT current_timestamp(),
   `post_views` int(11) DEFAULT 0,

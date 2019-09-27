@@ -1,6 +1,6 @@
 CREATE TABLE `jl_userson` (
   `onl_id` varchar(45) NOT NULL,
-  `onl_start` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `onl_start` timestamp NOT NULL DEFAULT current_timestamp(),
   `onl_end` timestamp NOT NULL DEFAULT current_timestamp(),
   `onl_ip` varchar(45) NOT NULL,
   `onl_url` varchar(180) NOT NULL

@@ -17,7 +17,7 @@ CREATE TABLE `jl_pages` (
   `pg_footer` varchar(45) DEFAULT NULL,
   `pg_content` text DEFAULT NULL,
   `pg_analytics` varchar(30) DEFAULT NULL,
-  `pg_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `pg_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `pg_lastupdate` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`pg_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8

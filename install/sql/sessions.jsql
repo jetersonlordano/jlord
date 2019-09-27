@@ -6,5 +6,5 @@ CREATE TABLE `jl_sessions` (
   `ses_ip` varchar(45) NOT NULL,
   `ses_locked` tinyint(4) NOT NULL DEFAULT 0,
   `ses_attempts` int(11) DEFAULT 0,
-  `ses_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `ses_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8

@@ -5,6 +5,6 @@ CREATE TABLE `jl_categories` (
   `cat_title` varchar(45) DEFAULT 'Nova categoria',
   `cat_description` varchar(255) DEFAULT NULL,
   `cat_icon` varchar(45) DEFAULT NULL,
-  `cat_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `cat_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`cat_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8

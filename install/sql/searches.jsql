@@ -4,6 +4,6 @@ CREATE TABLE `jl_searches` (
   `sch_term` varchar(150) NOT NULL,
   `sch_count` int(11) NOT NULL DEFAULT 1,
   `sch_found` int(11) NOT NULL,
-  `sch_lastsearch` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `sch_lastsearch` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`sch_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8

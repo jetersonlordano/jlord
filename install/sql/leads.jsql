@@ -7,6 +7,6 @@ CREATE TABLE `jl_leads` (
   `lead_lp` varchar(80) NOT NULL,
   `lead_lpname` varchar(80) NOT NULL,
   `lead_confirm` tinyint(1) NOT NULL DEFAULT 0,
-  `lead_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `lead_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`lead_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
