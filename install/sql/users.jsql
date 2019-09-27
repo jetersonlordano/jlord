@@ -10,12 +10,12 @@ CREATE TABLE `jl_users` (
   `user_cpf` varchar(15) DEFAULT NULL,
   `user_avatar` varchar(60) DEFAULT NULL,
   `user_dateofbirth` date DEFAULT NULL,
-  `user_gender` enum('F','M') NOT NULL DEFAULT 'M',
-  `user_lastupdate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_gender` enum('F','M') DEFAULT 'M',
+  `user_lastupdate` timestamp NOT NULL DEFAULT current_timestamp(),
   `user_lastsession` timestamp NOT NULL DEFAULT current_timestamp(),
   `user_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `user_nickname` varchar(45) NOT NULL,
-  `user_address` varchar(200) NOT NULL,
-  `user_rg` varchar(15) NOT NULL,
+  `user_nickname` varchar(45),
+  `user_address` varchar(200),
+  `user_rg` varchar(15),
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8

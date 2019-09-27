@@ -26,6 +26,19 @@ $DBNAME = trim($POST['dbname']);
 $DBUSER = trim($POST['dbuser']);
 $DBPASS = trim($POST['dbpsw']);
 
+// Configuração da base de dados
+define('DBCONFIG', [
+    'host' => $DBHOST,
+    'db' => $DBNAME,
+    'user' => $DBUSER,
+    'psw' => $DBPASS,
+]);
+
+
+require_once 'Database/PDOEasy.class.php';
+use Database\PDOEasy;
+
+
 /**
  * Listar tabelas
  */
@@ -33,50 +46,23 @@ $DBPASS = trim($POST['dbpsw']);
 $listTables = file_exists('sql') ? glob("sql/*.jsql", GLOB_BRACE) : [];
 if (!$listTables) {die('Nenhuma tabela encontrada!');}
 
-/**
- * Conexão com banco de dados
- */
-
-$dsn = 'mysql:host=' . $DBHOST . ';dbname=' . $DBNAME;
-$PDOOptions = [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'];
-
-try {
-    $PDO = new PDO($dsn, $DBUSER, $DBPASS, $PDOOptions);
-} catch (PDOException $erro) {
-    die('Não foi possível se conectar com o banco de dados');
-}
-
-$PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-/**
- * Função genérica MYSQL
- */
-
-function mysql(string $sql, bool $return = false)
-{
-    try {
-
-        global $PDO;
-        $statement = $PDO->prepare($sql);
-        $statement->execute();
-        return $return ? $statement->fetchAll(PDO::FETCH_NUM) : true;
-
-    } catch (PDOException $e) {
-
-        echo $e->getMessage();
-        die;
-
-    }
-}
 
 /**
  * Verificar tabelas que já existem no banco
  */
+// $existingTables = mysql('SHOW TABLES', true);
+// if ($existingTables) {
+//     die('Seu banco de dados não pode conter tabelas');
+// }
 
-$existingTables = mysql('SHOW TABLES', true);
+$conn = new PDOEasy();
+$conn->query = 'SHOW TABLES';
+$conn->exec();
+$existingTables = $conn->fetchAll();
 if ($existingTables) {
     die('Seu banco de dados não pode conter tabelas');
 }
+
 
 /**
  * Criar novas tabelas
@@ -94,21 +80,25 @@ function createTable($index)
     // Conteúdo SQL
     $tbContent = file_get_contents($listTables[$index]);
 
-    if (mysql($tbContent)) {
+    $conn = new PDOEasy();
+    $conn->query = $tbContent;
+   
+    if(!$conn->exec()){
+        die('Erro ao criar tabela ' . $listTables[$index]);
+    }
 
-        if (!isset($listTables[$index + 1])) {
-            insertUser();
-            return false;
-        }
+    if (!isset($listTables[$index + 1])) {
+        insertUser();
+        return false;
+    }
 
-        createTable($index + 1);
-
-    } else {die('Erro ao criar tabela ' . $listTables[$index]);}
+    createTable($index + 1);
 
 }
 
 // Inicia a criação das tabelas
 createTable(0);
+
 
 /**
  * Inserir usuário principal na tabela users
@@ -117,31 +107,33 @@ createTable(0);
 function insertUser()
 {
 
-    $result = mysql('select * from jl_users', true);
+    $conn = new PDOEasy();
+    $conn->select('jl_users');
+    $conn->exec();
+    $result = $conn->fetchAll();
+
 
     if (!$result) {
 
-        global $PDO;
         global $userName;
         global $email;
         global $psw;
 
-        $dados = $PDO->prepare('INSERT INTO jl_users (user_accesslevel, user_password, user_name, user_email) VALUES (:accesslevel, :pass, :nome, :email)');
-
         $num = 10;
         $pass = password_hash($psw, PASSWORD_DEFAULT, ['cost' => 10]);
 
-        $dados->bindParam(':accesslevel', $num, PDO::PARAM_STR);
-        $dados->bindParam(':pass', $pass, PDO::PARAM_STR);
-        $dados->bindParam(":nome", $userName, PDO::PARAM_STR);
-        $dados->bindParam(":email", $email, PDO::PARAM_STR);
+        $insertSQL = [
+            'user_accesslevel' => $num,
+            'user_password' => $pass,
+            'user_name' => $userName,
+            'user_email' => $email,
+        ];
 
-        $exec = $dados->execute();
+        $conn->insert('jl_users', $insertSQL);
 
-        if (!$exec) {
+        if (!$conn->exec()){
             die('Erro ao inserir usuário');
         }
-
         configs();
     }
 }
