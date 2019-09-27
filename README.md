@@ -6,6 +6,17 @@ O JLord está em base de testes e no momento está disponível apenas o módulo 
 
 ## ATENÇÃO!
 
+Cuidados com as configurações padrão arquivo .htaccess do seu servidor de hospedagem. Você deve adiciona-las nos .htaccess do JLord.
+
+###### .htaccess e admin/.htaccess
+
+###### Se for testar usando Linux em localhost
+
+Para evitar erros mude as permissões dos arquivos e diretórios do JLord com seguinte comando:
+
+Exemplo: sudo chmod 777 -R /opt/lampp/htdocs/jlord
+
+###### Evitar perder dados
 Não instale o JLord junto com outros arquivos do seu site, pois pode ocorrer substituições e use um banco de dados novo sem tabelas.
 
 ## Instalação

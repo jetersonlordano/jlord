@@ -40,7 +40,8 @@ class Session
         $this->token = md5(CMSNAME . $this->section . $_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT']);
 
         // Pega a url atual
-        $this->urlAtual = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        //$this->urlAtual = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $this->urlAtual = isset($_SERVER['HTTPS']) ? 'https://' : 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
         // Verifica se a sessão existe ou redireciona para login
         if (isset($_SESSION[$this->token])) {$this->checkSession();} else { $this->redirectPageLogin();}
