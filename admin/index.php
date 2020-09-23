@@ -1,5 +1,9 @@
 <?php
 
+/**
+* Index Painel de controle
+*/
+
 require '../_app/Client.inc.php';
 
 // Controle de Sessão
